@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 3;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 0;        /* snap pixel */
 static const unsigned int tag_space = 8;        /* spacing between tags */
@@ -53,7 +53,8 @@ static char *status_colors[][3]  = {
 };
 
 /* tagging */
-static const char *tags[] = { "", "", "", "", "", "", "", "", "阮" };
+// static const char *tags[] = { "", "", "", "", "", "", "", "", "󰝚" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -62,19 +63,20 @@ static const Rule rules[] = {
 	*/
 	/* class     instance  title        tags mask  isfloating  isterminal  noswallow  monitor */
     /* by default no swallowing */
-	{ NULL,       NULL,     NULL,        0,         0,          0,           1,        -1 },
+	{ NULL,        NULL,      NULL,        0,         0,          0,           1,        -1 },
 
-	{ "Gimp",     NULL,     NULL,        1 << 7,    0,          0,           0,        -1 },
-	{ "firefox",  NULL,     NULL,        1 << 2,    0,          0,           1,        -1 },
-	{ "St",       NULL,     NULL,        0,         0,          1,           0,        -1 },
-	/* swallow */ 
-	{ "mpv",      NULL,     NULL,        0,         0,          0,           0,        -1 },
-	{ "Sxiv",     NULL,     NULL,        0,         0,          0,           0,        -1 },
-	{ "pcmanfm",  NULL,     NULL,        0,         0,          0,           0,        -1 },
-	{ "Zathura",  NULL,     NULL,        0,         0,          0,           0,        -1 },
-	{ "spotify",  NULL,	    NULL,        1 << 8,    0,          0,           0,        -1 },
-	{ NULL,       NULL,"Spotify",        1 << 8,    0,          0,           0,        -1 },
-	{ "Psst-gui", NULL,	    NULL,        1 << 8,    0,          0,           0,        -1 }
+	{ "Gimp",      NULL,      NULL,        1 << 7,    0,          0,           0,        -1 },
+	{ "firefox",   NULL,      NULL,        1 << 2,    0,          0,           1,        -1 },
+	{ "LibreWolf", NULL,      NULL,        1 << 2,    0,          0,           1,        -1 },
+	{ "St",        NULL,      NULL,        0,         0,          1,           0,        -1 },
+	/* swallow */
+	{ "mpv",       NULL,      NULL,        0,         0,          0,           0,        -1 },
+	{ "Sxiv",      NULL,      NULL,        0,         0,          0,           0,        -1 },
+	{ "pcmanfm",   NULL,      NULL,        0,         0,          0,           0,        -1 },
+	{ "Zathura",   NULL,      NULL,        0,         0,          0,           0,        -1 },
+	{ "spotify",   NULL, 	 NULL,         1 << 8,    0,          0,           0,        -1 },
+	{ NULL,        NULL, "Spotify",        1 << 8,    0,          0,           0,        -1 },
+	{ "Psst-gui",  NULL, 	 NULL,         1 << 8,    0,          0,           0,        -1 }
 };
 
 /* layout(s) */
@@ -169,10 +171,10 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
+	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} },
 
     //Applications
-    { MODKEY,                       XK_w,      spawn,          NOSHCMD("firefox") },
+    { MODKEY,                       XK_w,      spawn,          NOSHCMD("librewolf") },
     { 0,         XF86XK_AudioLowerVolume,      spawn,          NOSHCMD("volnotify", "-5%") },
     { 0,         XF86XK_AudioRaiseVolume,      spawn,          NOSHCMD("volnotify", "+5%") },
     { 0,                XF86XK_AudioMute,      spawn,          NOSHCMD("volnotify", "mute") },
