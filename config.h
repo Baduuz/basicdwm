@@ -11,7 +11,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 0;       /* vertical padding of bar */
 static const int sidepad            = 0;       /* horizontal padding of bar */
-static const int user_bh            = 25;       /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
+static const int user_bh            = 0;       /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
 static const char *fonts[]          = { "DejaVu Sans:size=10", "Fira Code:size=10.5", "Symbols Nerd Font:size=10.7" };
 static const char dmenufont[]       = "Fira Code:size=10";
 static char col_black[]       = "#3b4252";
@@ -24,7 +24,7 @@ static char col_green[]       = "#a3be8c";
 static char col_magenta[]     = "#b48ead";
 static char col_blue[]        = "#5e81ac";
 static char col_cyan[]        = "#81a1c1";
-static char col_sel[]         = "#bf6161";
+static char col_sel[]         = "#81a1c1";
 static char *colors[][3]      = {
 	/*                  fg         bg         border   */
 	[SchemeNorm]    = { col_white, col_black, col_black },
@@ -107,8 +107,8 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-i", "-F", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_white, "-sb", col_sel, "-sf", col_white, NULL };
-static const char *dmenu_desktop_cmd[] = { "j4-dmenu-desktop", "-i", "-F", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_white, "-sb", col_sel, "-sf", col_white, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-i", "-F", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_white, "-sb", col_sel, "-sf", col_white, "-c", "-l", "20", "-bw", "2", NULL };
+static const char *dmenu_desktop_cmd[] = { "j4-dmenu-desktop", "-i", "-F", "-m", dmenumon, "-fn", dmenufont, "-nb", col_black, "-nf", col_white, "-sb", col_sel, "-sf", col_white, "-c", "-l", "20", "-bw", "2", NULL };
 static const char *termcmd[]  = { "st", NULL };
 
 #include "movestack.c"
