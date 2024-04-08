@@ -175,9 +175,9 @@ static Key keys[] = {
 
     //Applications
     { MODKEY,                       XK_w,      spawn,          NOSHCMD("librewolf") },
-    { 0,         XF86XK_AudioLowerVolume,      spawn,          NOSHCMD("volnotify", "-5%") },
-    { 0,         XF86XK_AudioRaiseVolume,      spawn,          NOSHCMD("volnotify", "+5%") },
-    { 0,                XF86XK_AudioMute,      spawn,          NOSHCMD("volnotify", "mute") },
+    { 0,         XF86XK_AudioLowerVolume,      spawn,          NOSHCMD("volume-tool", "-5%") },
+    { 0,         XF86XK_AudioRaiseVolume,      spawn,          NOSHCMD("volume-tool", "+5%") },
+    { 0,                XF86XK_AudioMute,      spawn,          NOSHCMD("volume-tool", "mute") },
     { 0,                XF86XK_AudioPlay,      spawn,          NOSHCMD("playerctl", "play-pause") },
     { 0,                XF86XK_AudioPrev,      spawn,          NOSHCMD("playerctl", "previous") },
     { 0,                XF86XK_AudioNext,      spawn,          NOSHCMD("playerctl", "next") }
